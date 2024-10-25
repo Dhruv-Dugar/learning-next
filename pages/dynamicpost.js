@@ -2,7 +2,7 @@ import React from 'react'
 
 // this does Server Side Generation, already loaded up
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const res = await fetch("https://jsonplaceholder.typicode.com/todos")
     const output = await res.json()
 
@@ -16,7 +16,7 @@ export async function getStaticProps() {
 
 
 
-function StaticPosts({apiData}) {
+function DynamicPost({apiData}) {
   console.log(apiData)
   return (
     <div>
@@ -31,4 +31,4 @@ function StaticPosts({apiData}) {
   )
 }
 
-export default StaticPosts
+export default DynamicPost
